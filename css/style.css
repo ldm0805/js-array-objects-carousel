@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .container{
     height: 100vh;
     display: flex;
@@ -26,10 +25,6 @@
     height: 100%
 }
 
-img{
-    position: relative;
-    z-index:0;
-}
 
 .item img{
     width: 100%;
@@ -43,7 +38,7 @@ img{
     background-color: rgba(174, 174, 174, 0.509);
     border-radius: 50px;
     font-weight: 800; 
-    left: 50%;
+    left: 113%;
     font-size: 30px;
     transform: translateX(-50%);
     text-align: center;
@@ -54,6 +49,7 @@ img{
 .desc{
     text-align: end;
     position: absolute;
+    padding-left: 1em;
     right: 1em;
     bottom: 0;
     z-index: 5;
@@ -100,3 +96,26 @@ img{
     animation: flipInY;
     animation-duration: 1s; 
   } */
+
+  .thumbnails{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    background-color: black;
+  }
+
+  .thumb{
+    width: 100%;
+    height: calc(100% / 5);
+    opacity: .5;
+  }
+
+  .thumb .img{
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .thumb .active{
+    opacity: 1;
+  }

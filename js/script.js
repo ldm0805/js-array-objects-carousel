@@ -7,7 +7,8 @@ function goToNextSlide(){
         
         //rimuovo la classe active al nuovo elemento dell'array circle 
         circles[itemActive].classList.remove('active');
-    
+        
+        thumbnails[itemActive].classList.remove('.active');
         //incremento il suo valore di 1
         ++itemActive;
 
@@ -16,6 +17,8 @@ function goToNextSlide(){
 
        //aggiungo la classe active al nuovo elemento dell'array circle
         circles[itemActive].classList.add('active');
+
+        thumbnails[itemActive].classList.add('.active');
         }   
     
     else{
@@ -24,6 +27,7 @@ function goToNextSlide(){
 
         //rimuovo la classe active al nuovo elemento dell'array circle 
         circles[itemActive].classList.remove('active');
+        thumbnails[itemActive].classList.remove('.active')
     
         //assegno ad itemActive 0
         itemActive = 0;
@@ -33,6 +37,7 @@ function goToNextSlide(){
 
         //aggiungo la classe active al nuovo elemento dell'array circle
         circles[itemActive].classList.add('active');
+        thumbnails[itemActive].classList.add('.active')
         }
 }
 
@@ -46,6 +51,7 @@ function goToPrevSlide(){
 
     //rimuovo la classe active al nuovo elemento dell'array circle 
     circles[itemActive].classList.remove('active');
+    thumbnails[itemActive].classList.remove('.active')
 
     //decremento il suo valore di 1
     itemActive--;
@@ -55,6 +61,7 @@ function goToPrevSlide(){
 
     //aggiungo la classe active al nuovo elemento dell'array circle
     circles[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('.active')
 }
 
 else{
@@ -64,6 +71,7 @@ else{
 
     //rimuovo la classe active al nuovo elemento dell'array circle 
     circles[itemActive].classList.remove('active');
+    thumbnails[itemActive].classList.remove('.active')
     
     //incremento il suo valore di 1
     itemActive = superhero.length-1;
@@ -73,6 +81,7 @@ else{
     
     //aggiungo la classe active al nuovo elemento dell'array circle
     circles[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('.active')
 }
 }
 
@@ -112,6 +121,7 @@ console.log(superhero)
 superhero.forEach((elem) => console.log(`${elem.image} - ${elem.title} - ${elem.description}`))
 
 let itemsContent = '';
+let itemsThumbnails = '';
 
 superhero.forEach((elem) => {
     itemsContent += `<div class="item">
@@ -121,10 +131,17 @@ superhero.forEach((elem) => {
     <p>${elem.description}</p>
     </div>
     </div>`
+    itemsThumbnails += `<div class="thumb"><img src="${elem.image}"></div>`
 });
+
+const thumbnails = document.getElementsByClassName('thumb');
+
 
 const itemsSlider = document.querySelector('.item-slider');
 itemsSlider.innerHTML += itemsContent;
+
+const thumbnailsPreview = document.querySelector('.thumbnails');
+thumbnailsPreview.innerHTML += itemsThumbnails;
 
 console.log(superhero.forEach)
 
@@ -173,18 +190,18 @@ function autoCaruselPrev(){
  let myInterval = setInterval(autoCarusel, 3000);
 
 // creazione dei pulsanti per avviare o stoppare il carosello in avanti
-const play_button = document.getElementById("play")
-myInterval ;
+const play_button = document.getElementById("play");
 
 play_button.addEventListener('click', function(){
+    clearInterval(myInterval);
     myInterval = setInterval(autoCarusel, 3000);
 })
 
 // creazione dei pulsanti per avviare o stoppare il carosello in reverse
-const play_button_reverse = document.getElementById("reverse")
-myInterval ;
+const play_button_reverse = document.getElementById("reverse");
 
 play_button_reverse.addEventListener('click', function(){
+    clearInterval(myInterval);
     myInterval = setInterval(autoCaruselPrev, 3000);
 })
 
