@@ -29,3 +29,18 @@ let superhero = [
     },
 ]
 console.log(superhero)
+
+superhero.forEach((elem) => console.log(`${elem.image} - ${elem.title} - ${elem.description}`))
+
+let itemsContent = '';
+
+superhero.forEach((elem) => {
+    itemsContent += `<div class="item">
+    <img src="${elem.image}"
+    <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+    </div>`
+});
+const itemsSlider = document.querySelector('.item-slider');
+itemsSlider.innerHTML += itemsContent;
+
+console.log(superhero.forEach)
