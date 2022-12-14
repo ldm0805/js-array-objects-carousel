@@ -86,30 +86,26 @@
     cursor: pointer;
 }
 
-
 .circle.active, .circle:hover{
     background-color: rgba(174, 174, 174, 1); 
 }
 
-  .thumbnails{
+.thumbnails{
     float: right;
     display: flex;
     flex-direction: column;
     height: 50vh;
     background-color: black;
-  }
-
-  .thumb{
+}
+.thumb{
     width: 100%;
     height: calc(100% / 5);
     opacity: .5;
-  }
-
-  .thumb img{
+}
+.thumb img{
     width: 100%;
     object-fit: cover;
-  }
-
-  .thumb.active{
+}
+.thumb.active{
     opacity: 1;
-  }
+}
