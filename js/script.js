@@ -94,7 +94,7 @@ else{
     
     circles[itemActive].classList.add('active');
 
-    thumbnails[itemActive].classList.add('active')
+    thumbnails[itemActive].classList.add('active');
 }
 }
 
@@ -153,14 +153,12 @@ itemsSlider.innerHTML += itemsContent;
 
 const thumbnails = document.getElementsByClassName('thumb');
 
-
 const thumbnailsPreview = document.querySelector('.thumbnails')
 thumbnailsPreview.innerHTML += itemsThumbnails;
 
 
 //Prendiamo la prima immagine dell'array e la rendiamo attiva
 
-//const items = document.querySelector('.item'); //ALTERNATIVA
 //Array items
 const items = document.getElementsByClassName('item');
 //Indice degli array
@@ -183,9 +181,7 @@ next.addEventListener('click', goToNextSlide);
 // slider indietro
 prev.addEventListener('click', function(){
     goToPrevSlide()
-
 })
-
 
 //Richiamo alla funzione per il carosello automatico
 

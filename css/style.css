@@ -32,6 +32,32 @@
 
 }
 
+/* thumbails */
+
+.thumbnails{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    background-color: black;
+}
+
+.thumb{
+    width: 100%;
+    height: calc(100% / 5);
+    opacity: .5;
+}
+
+.thumb img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.thumb.active{
+    outline: 2px solid rgba(29, 29, 29, 0.822);
+    opacity: 1;
+}
+
 .arrow{
     position: absolute;
     width: 30px;
@@ -90,22 +116,4 @@
     background-color: rgba(174, 174, 174, 1); 
 }
 
-.thumbnails{
-    float: right;
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    background-color: black;
-}
-.thumb{
-    width: 100%;
-    height: calc(100% / 5);
-    opacity: .5;
-}
-.thumb img{
-    width: 100%;
-    object-fit: cover;
-}
-.thumb.active{
-    opacity: 1;
-}
+
