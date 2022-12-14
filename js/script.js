@@ -1,49 +1,51 @@
 //funzione per andare avanti con le immagini
 function goToNextSlide(){
 
-    if (itemActive < superhero.length -1){
+    if (itemActive < superhero.length -1) {
 
-        // Rimuovo la classe active
+    // Rimuovo la classe active
 
-        items[itemActive].classList.remove('active');
-        
-        circles[itemActive].classList.remove('active');
-        
-        thumbnails[itemActive].classList.remove('active');
-
-        //incremento il suo valore di 1
-
-        ++itemActive;
-
-        // Aggiungo la classe active
-
-        items[itemActive].classList.add('active');
-
-        circles[itemActive].classList.add('active');
-
-        thumbnails[itemActive].classList.add('active');
-        }   
+    items[itemActive].classList.remove('active');
     
-    else{
-
-        // Rimuovo la classe active
-        items[itemActive].classList.remove('active');
-
-        circles[itemActive].classList.remove('active');
-
-        thumbnails[itemActive].classList.remove('active')
+    circles[itemActive].classList.remove('active');
     
-        //assegno ad itemActive 0
+    thumbnails[itemActive].classList.remove('active');
 
-        itemActive = 0;
+    //incremento il suo valore di 1
 
-        // Aggiungo la classe active 
+    ++itemActive;
 
-        items[itemActive].classList.add('active');
+    // Aggiungo la classe active
 
-        circles[itemActive].classList.add('active');
+    items[itemActive].classList.add('active');
 
-        thumbnails[itemActive].classList.add('active');
+    circles[itemActive].classList.add('active');
+
+    thumbnails[itemActive].classList.add('active');
+
+    }   
+    
+ else {
+
+    // Rimuovo la classe active
+
+    items[itemActive].classList.remove('active');
+
+    circles[itemActive].classList.remove('active');
+
+    thumbnails[itemActive].classList.remove('active')
+    
+    //assegno ad itemActive 0
+
+    itemActive = 0;
+
+    // Aggiungo la classe active 
+
+    items[itemActive].classList.add('active');
+
+    circles[itemActive].classList.add('active');
+
+    thumbnails[itemActive].classList.add('active');
         }
 }
 
@@ -51,7 +53,7 @@ function goToPrevSlide(){
 
     //verifico l'elemento attivo (itemActive)
 
-    if (itemActive > 0){
+    if (itemActive > 0) {
 
     // Rimuovo la classe active
 
@@ -74,7 +76,7 @@ function goToPrevSlide(){
     thumbnails[itemActive].classList.add('active')
 }
 
-else{
+else {
 
     // Rimuovo la classe active
 
@@ -128,7 +130,7 @@ let superhero = [
     image: "./img/05.webp",
     title: "Avengers",
     description: "Marvel's Avengers vanta un sistema di equipaggiamento che permette di personalizzare gli Avenger in base al tuo stile di gioco. Indossa i tuoi costumi preferiti ",
-    },
+    }
 ]
 
 
@@ -161,12 +163,12 @@ thumbnailsPreview.innerHTML += itemsThumbnails;
 
 //Array items
 const items = document.getElementsByClassName('item');
+
 //Indice degli array
 let itemActive = 0;
 
 items[itemActive].classList.add('active');
 
-//rendo attivo anche il primo cerchio di navigazione
 //Array circles
 const circles = document.getElementsByClassName('circle');
 
@@ -175,13 +177,11 @@ circles[itemActive].classList.add('active');
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');
 
-//slider avanti
-next.addEventListener('click', goToNextSlide);
+//slider indietro
+next.addEventListener('click', goToPrevSlide);
 
-// slider indietro
-prev.addEventListener('click', function(){
-    goToPrevSlide()
-})
+//slider avanti
+prev.addEventListener('click', goToNextSlide);
 
 //Richiamo alla funzione per il carosello automatico
 

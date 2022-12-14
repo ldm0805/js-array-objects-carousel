@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.cont-all{
+    background: linear-gradient(#F05454,#30475E,#121212);
+}
+
 .slider{
     width: 50vw;
     height: 50vh;
