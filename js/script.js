@@ -1,90 +1,104 @@
 //funzione per andare avanti con le immagini
 function goToNextSlide(){
+
     if (itemActive < superhero.length -1){
 
-        //rimuovo la classe active al nuovo elemento dell'array items 
+        // Rimuovo la classe active
+
         items[itemActive].classList.remove('active');
         
-        //rimuovo la classe active al nuovo elemento dell'array circle 
         circles[itemActive].classList.remove('active');
         
-        thumbnails[itemActive].classList.remove('.active');
+        thumbnails[itemActive].classList.remove('active');
+
         //incremento il suo valore di 1
+
         ++itemActive;
 
-        //aggiungo la classe active al nuovo elemento dell'array items
+        // Aggiungo la classe active
+
         items[itemActive].classList.add('active');
 
-       //aggiungo la classe active al nuovo elemento dell'array circle
         circles[itemActive].classList.add('active');
 
-        thumbnails[itemActive].classList.add('.active');
+        thumbnails[itemActive].classList.add('active');
         }   
     
     else{
-        //rimuovo la classe active al nuovo elemento dell'array items 
+
+        // Rimuovo la classe active
         items[itemActive].classList.remove('active');
 
-        //rimuovo la classe active al nuovo elemento dell'array circle 
         circles[itemActive].classList.remove('active');
-        thumbnails[itemActive].classList.remove('.active')
+
+        thumbnails[itemActive].classList.remove('active')
     
         //assegno ad itemActive 0
+
         itemActive = 0;
 
-        //aggiungo la classe active al nuovo elemento dell'array items
+        // Aggiungo la classe active 
+
         items[itemActive].classList.add('active');
 
-        //aggiungo la classe active al nuovo elemento dell'array circle
         circles[itemActive].classList.add('active');
-        thumbnails[itemActive].classList.add('.active')
+
+        thumbnails[itemActive].classList.add('active');
         }
 }
 
 function goToPrevSlide(){
 
     //verifico l'elemento attivo (itemActive)
+
     if (itemActive > 0){
 
-    //rimuovo la classe active al nuovo elemento dell'array items 
+    // Rimuovo la classe active
+
     items[itemActive].classList.remove('active');
 
-    //rimuovo la classe active al nuovo elemento dell'array circle 
     circles[itemActive].classList.remove('active');
-    thumbnails[itemActive].classList.remove('.active')
+
+    thumbnails[itemActive].classList.remove('active');
 
     //decremento il suo valore di 1
+    
     itemActive--;
 
-    //aggiungo la classe active al nuovo elemento dell'array items
+    // Aggiungo la classe active
+
     items[itemActive].classList.add('active');
 
-    //aggiungo la classe active al nuovo elemento dell'array circle
     circles[itemActive].classList.add('active');
-    thumbnails[itemActive].classList.add('.active')
+
+    thumbnails[itemActive].classList.add('active')
 }
 
 else{
 
-    //rimuovo la classe active al nuovo elemento dell'array items 
+    // Rimuovo la classe active
+
     items[itemActive].classList.remove('active');
 
-    //rimuovo la classe active al nuovo elemento dell'array circle 
     circles[itemActive].classList.remove('active');
-    thumbnails[itemActive].classList.remove('.active')
+
+    thumbnails[itemActive].classList.remove('active');
     
     //incremento il suo valore di 1
+
     itemActive = superhero.length-1;
     
-    //aggiungo la classe active al nuovo elemento dell'array items
+    // Aggiungo la classe active
+
     items[itemActive].classList.add('active');
     
-    //aggiungo la classe active al nuovo elemento dell'array circle
     circles[itemActive].classList.add('active');
-    thumbnails[itemActive].classList.add('.active')
+
+    thumbnails[itemActive].classList.add('active')
 }
 }
 
+//Array di oggetti
 
 let superhero = [
     {
@@ -116,9 +130,9 @@ let superhero = [
     description: "Marvel's Avengers vanta un sistema di equipaggiamento che permette di personalizzare gli Avenger in base al tuo stile di gioco. Indossa i tuoi costumi preferiti ",
     },
 ]
-console.log(superhero)
 
-superhero.forEach((elem) => console.log(`${elem.image} - ${elem.title} - ${elem.description}`))
+
+//superhero.forEach((elem) => console.log(`${elem.image} - ${elem.title} - ${elem.description}`))
 
 let itemsContent = '';
 let itemsThumbnails = '';
@@ -134,16 +148,14 @@ superhero.forEach((elem) => {
     itemsThumbnails += `<div class="thumb"><img src="${elem.image}"></div>`
 });
 
-const thumbnails = document.getElementsByClassName('thumb');
-
-
 const itemsSlider = document.querySelector('.item-slider');
 itemsSlider.innerHTML += itemsContent;
 
-const thumbnailsPreview = document.querySelector('.thumbnails');
-thumbnailsPreview.innerHTML += itemsThumbnails;
+const thumbnails = document.getElementsByClassName('thumb');
 
-console.log(superhero.forEach)
+
+const thumbnailsPreview = document.querySelector('.thumbnails')
+thumbnailsPreview.innerHTML += itemsThumbnails;
 
 
 //Prendiamo la prima immagine dell'array e la rendiamo attiva

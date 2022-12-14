@@ -34,12 +34,12 @@
 
 .arrow{
     position: absolute;
-    width: 40px;
-    background-color: rgba(174, 174, 174, 0.509);
+    width: 30px;
+    background-color: rgba(255, 255, 255, 0.548);
     border-radius: 50px;
     font-weight: 800; 
     left: 113%;
-    font-size: 30px;
+    font-size: 20px;
     transform: translateX(-50%);
     text-align: center;
     cursor: pointer;
@@ -91,12 +91,6 @@
     background-color: rgba(174, 174, 174, 1); 
 }
 
-
-/* .active {
-    animation: flipInY;
-    animation-duration: 1s; 
-  } */
-
   .thumbnails{
     float: right;
     display: flex;
@@ -111,11 +105,11 @@
     opacity: .5;
   }
 
-  .thumb .img{
+  .thumb img{
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
   }
 
-  .thumb .active{
+  .thumb.active{
     opacity: 1;
   }
