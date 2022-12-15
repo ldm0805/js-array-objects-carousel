@@ -108,28 +108,29 @@ let superhero = [
     title: "Marvel's Spiderman Miles Morales",
     description: "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.",
     },
+
     {
     image: "./img/02.webp",
     title: "Ratchet And Clank",
     description: "Ratchet & Clank è una serie di videogiochi platform-adventure sviluppati da Insomniac Games e pubblicati da Sony Computer Entertainment.",
-
     },
+
     {
     image: "./img/03.webp",
     title: "Fortnine",
     description: "Fortnite è un gioco di Battaglia reale free-to-play con numerose modalità per ogni tipo di giocatore. Guarda un concerto, costruisci un'isola o combatti.",
-
     },
+
     {
     image: "./img/04.webp",
     title: "Stray cat",
     description: "Lost, alone and separated from family, a stray cat must untangle an ancient mystery to escape a long-forgotten city. Stray is a third-person cat adventure game ...",
-
     },
+
     {
     image: "./img/05.webp",
     title: "Avengers",
-    description: "Marvel's Avengers vanta un sistema di equipaggiamento che permette di personalizzare gli Avenger in base al tuo stile di gioco. Indossa i tuoi costumi preferiti ",
+    description: "Marvel's Avengers vanta un sistema di equipaggiamento che permette di personalizzare gli Avenger in base al tuo stile di gioco. Indossa i tuoi costumi preferiti.",
     }
 ]
 
@@ -141,11 +142,11 @@ let itemsThumbnails = '';
 
 superhero.forEach((elem) => {
     itemsContent += `<div class="item">
-    <img src="${elem.image}">
-    <div class="desc text-white">
-    <h2>${elem.title}</h2>
-    <p>${elem.description}</p>
-    </div>
+        <img src="${elem.image}">
+        <div class="desc text-white">
+            <h2>${elem.title}</h2>
+            <p>${elem.description}</p>
+        </div>
     </div>`
     itemsThumbnails += `<div class="thumb"><img src="${elem.image}"></div>`
 });
@@ -173,6 +174,24 @@ items[itemActive].classList.add('active');
 const circles = document.getElementsByClassName('circle');
 
 circles[itemActive].classList.add('active');
+
+//Click sulle immagini 
+for( let i=0; i < thumbnails.length; i++){
+    let thumb = thumbnails[i];
+    console.log(thumb)
+    thumb.addEventListener('click', function(){
+
+    items[itemActive].classList.remove('active');
+    circles[itemActive].classList.remove('active');
+    thumbnails[itemActive].classList.remove('active');
+
+    itemActive = i
+
+    items[itemActive].classList.add('active');
+    circles[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('active');
+    })
+}
 
 const prev = document.querySelector('.prev');
 const next = document.querySelector('.next');

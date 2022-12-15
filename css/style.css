@@ -50,6 +50,7 @@
     width: 100%;
     height: calc(100% / 5);
     opacity: .5;
+    cursor: pointer;
 }
 
 .thumb img{
@@ -83,6 +84,7 @@
     right: 1em;
     bottom: 0;
     z-index: 5;
+    text-shadow: 1px 1px #000000;
 }
 
 .next{
